@@ -29,10 +29,26 @@ const navItems = [
     title: "WATCH",
     _path: "watch"
   },
+  {
+    title: "Disclaimer",
+    _path: "disclaimer"
+  },
+  {
+    title: "FAQ",
+    _path: "faq"
+  },
+  {
+    title: "Privacy Policy",
+    _path: "privacy-policy"
+  },
+  {
+    title: "Terms Of Use",
+    _path: "terms-of-use"
+  },
 ]
 
 export default function Header({ navigation }) {
-
+  console.log(navigation);
   return (
     <View style={styles.pageHeader}>
         <View style={styles.body}>
@@ -48,11 +64,12 @@ export default function Header({ navigation }) {
                 style={styles.icon}
                 source={require('../../../assets/icons/BELLNN.png')} 
             />
-            <Image 
-                style={styles.icon}
-                source={require('../../../assets/icons/HAMBERGERNN.png')} 
-            />
-            
+            <TouchableOpacity onPress={()=>navigation.openDrawer()}>
+              <Image 
+                  style={styles.icon}
+                  source={require('../../../assets/icons/HAMBERGERNN.png')} 
+              />
+            </TouchableOpacity>
           </View>
         </View>
         <ScrollView horizontal={true} style={styles.slider}>

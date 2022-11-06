@@ -2,13 +2,14 @@ import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 import Header from '../components/common/Header';
 import PlayersTab from '../components/common/PlayersTab';
+import FNews from '../components/Sections/FNews';
 import XNews from '../components/Sections/XNews';
 
 const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
         <Header
-            navigation={navigation}
+            navigation={ navigation }
         />
         <ScrollView style={styles.body}>
             <XNews
@@ -21,7 +22,12 @@ const Home = ({ navigation }) => {
             <XNews
                 headline="Most Read"
             />
+            
             <PlayersTab/>
+
+            <FNews
+                headline="Featured"
+            />
         </ScrollView>
         <View style={styles.footer}>
             <View style={{ flex: 1, flexDirection: "row", justifyContent: "space-around"}}>
